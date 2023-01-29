@@ -76,7 +76,6 @@ wand
 wikipedia
 youtube_dl
 googletrans==3.1.0a0
-psycopg2
 yt_dlp
 git+https://github.com/redaiq90/webcolors
 git+https://github.com/cinemagoer/cinemagoer
