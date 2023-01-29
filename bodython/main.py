@@ -1,8 +1,8 @@
 import sys
-from .Config import Config
-from .core.logger import logging
-from .core.session import bodyiq
-from .utils import (
+from Config import Config
+from core.logger import logging
+from core.session import bodyiq
+from utils import (
     add_bot_to_logger_group,
     install_externalrepo,
     ipchange,
@@ -15,9 +15,6 @@ from .utils import (
 )
 
 LOGS = logging.getLogger("bodython")
-
-print(bodython.__copyright__)
-print("Licensed under the terms of the " + bodython.__license__)
 
 cmdhr = Config.COMMAND_HAND_LER
 
