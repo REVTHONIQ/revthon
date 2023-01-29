@@ -1,8 +1,10 @@
 import sys
-from Config import Config
-from core.logger import logging
-from core.session import bodyiq
-from utils import (
+import bodython
+from bodython import BOTLOG_CHATID, HEROKU_APP, PM_LOGGER_GROUP_ID
+from .Config import Config
+from .core.logger import logging
+from .core.session import bodyiq
+from .utils import (
     add_bot_to_logger_group,
     install_externalrepo,
     ipchange,
@@ -15,6 +17,9 @@ from utils import (
 )
 
 LOGS = logging.getLogger("bodython")
+
+print(bodython.__copyright__)
+print("Licensed under the terms of the " + bodython.__license__)
 
 cmdhr = Config.COMMAND_HAND_LER
 
@@ -60,5 +65,9 @@ async def startup_process():
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
     await verifyLoggerGroup()
     await saves()
+    await add_bot_to_logger_group(BOTLOG_CHATID)
+    if PM_LOGGER_GROUP_ID != -100:
+        await add_bot_to_logger_group(PM_LOGGER_GROUP_ID)
+    await startupmessage()
     Catcheck.sucess = True
     return
