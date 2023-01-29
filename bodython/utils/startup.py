@@ -67,7 +67,7 @@ async def setup_bot():
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(bodyiq.me)
     except Exception as e:
-        LOGS.error(f"كـود تيرمكس - {str(e)}")
+        LOGS.error(f"Session {str(e)}")
         sys.exit()
 
 
