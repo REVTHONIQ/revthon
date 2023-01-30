@@ -1,11 +1,11 @@
-FROM thejmthon/jmub:slim-buster
+FROM bodythoniq/body:slim-buster
 
-RUN git clone https://github.com/thejmthon/jmub.git /root/jmub
+RUN git clone https://github.com/bodythoniq/body.git /root/body
 
-WORKDIR /root/jmub
+WORKDIR /root/body
 
 RUN pip3 install --no-cache-dir -r requirements.txt
 
-ENV PATH="/home/jmub/bin:$PATH"
+ENV PATH="/home/body/bin:$PATH"
 
-CMD ["python3","-m","jmub"]
+CMD ["python3","-m","body"]
