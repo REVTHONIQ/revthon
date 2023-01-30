@@ -1,1 +1,1 @@
-python3 -m bodython
+python3 -m body
