@@ -37,7 +37,7 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 
-class BodyClient(TelegramClient):
+class BODYClient(TelegramClient):
     def ar_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
@@ -292,14 +292,14 @@ class BodyClient(TelegramClient):
         self.running_processes.clear()
 
 
-BodyClient.fast_download_file = download_file
-BodyClient.fast_upload_file = upload_file
-BodyClient.reload = restart_script
-BodyClient.get_msg_link = get_message_link
-BodyClient.check_testcases = checking
+BODYClient.fast_download_file = download_file
+BODYClient.fast_upload_file = upload_file
+BODYClient.reload = restart_script
+BODYClient.get_msg_link = get_message_link
+BODYClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    BodyClient.send_message = send_message
-    BodyClient.send_file = send_file
-    BodyClient.edit_message = edit_message
+    BODYClient.send_message = send_message
+    BODYClient.send_file = send_file
+    BODYClient.edit_message = edit_message

@@ -10,7 +10,7 @@ plugin_category = "fun"
     pattern="غبي$",
     command=("غبي", plugin_category),
     info={
-        "header": "throwing brain in dustbin animation",
+        "header": "throwing brain in dustALBODY animation",
         "usage": "{tr}غبي",
     },
 )
@@ -18,7 +18,7 @@ async def _(event):
     "animation command"
     animation_interval = 1
     animation_ttl = range(14)
-    event = await edit_or_reply(event, "`Throw your brain in dustbin`")
+    event = await edit_or_reply(event, "`Throw your brain in dustALBODY`")
     animation_chars = [
         "᯽︙ عقلك ➡️ 🧠\n\n🧠         <(^_^ <)🗑",
         "᯽︙ عقلك ➡️ 🧠\n\n🧠       <(^_^ <)  🗑",

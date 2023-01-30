@@ -134,7 +134,7 @@ async def purgeme(event):
         \n•  If you haven't replied to any message and used count then deletes recent x messages.\
         \n•  If you haven't replied to any message or havent mentioned any flag or count then doesnt do anything\
         \n•  If flag is used then selects that type of messages else will select all types\
-        \n•  You can use multiple flags like -gi 10 (It will delete 10 images and 10 gifs but not 10 messages of combination images and gifs.)\
+        \n•  You can use multiple flags like -gi 10 (It will delete 10 images and 10 gifs but not 10 messages of comALBODYation images and gifs.)\
         ",
         "الاضافه": {
             "البصمات": "لحـذف الرسائل الـصوتية.",

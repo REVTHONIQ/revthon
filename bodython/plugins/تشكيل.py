@@ -22,7 +22,7 @@ CMD_FIG = {
 
     "basic": "basic",
 
-    "binary": "binary",
+    "ALBODYary": "ALBODYary",
 
     "iso": "isometric1",
 
@@ -60,7 +60,7 @@ CMD_FIG = {
             "bubble",
             "bulb",
             "digi",
-            "binary",
+            "ALBODYary",
             "basic",
         ],
     },

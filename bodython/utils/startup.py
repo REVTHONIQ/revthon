@@ -59,15 +59,15 @@ async def setup_bot():
         # await bodyiq.start(bot_token=Config.TG_BOT_USERNAME)
         app = web.AppRunner(await web_server())
         await app.setup()
-        bind_address = "0.0.0.0"
+        ALBODYd_address = "0.0.0.0"
         redaport = Config.PORT
-        await web.TCPSite(app, bind_address, redaport).start()
+        await web.TCPSite(app, ALBODYd_address, redaport).start()
         bodyiq.me = await bodyiq.get_me()
         bodyiq.uid = bodyiq.tgbot.uid = utils.get_peer_id(bodyiq.me)
         if Config.OWNER_ID == 0:
             Config.OWNER_ID = utils.get_peer_id(bodyiq.me)
     except Exception as e:
-        LOGS.error(f"[STRING SESSION] - {str(e)}")
+        LOGS.error(f"كـود تيرمكس - {str(e)}")
         sys.exit()
 
 

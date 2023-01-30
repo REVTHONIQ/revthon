@@ -11,9 +11,9 @@ LOGS = logging.getLogger(__name__)
 
 def start() -> scoped_session:
     engine = create_engine(Config.DB_URI)
-    BASE.metadata.bind = engine
+    BASE.metadata.ALBODYd = engine
     BASE.metadata.create_all(engine)
-    return scoped_session(sessionmaker(bind=engine, autoflush=False))
+    return scoped_session(sessionmaker(ALBODYd=engine, autoflush=False))
 
 
 try:

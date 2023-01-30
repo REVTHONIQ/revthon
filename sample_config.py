@@ -25,7 +25,7 @@ class Config(object):
         "TG_BOT_TOKEN_BF_HER", None
     )
     TG_BOT_USERNAME = None
-    # get this value from http://www.timezoneconverter.com/cgi-bin/findzone.tzc
+    # get this value from http://www.timezoneconverter.com/cgi-ALBODY/findzone.tzc
     TZ = os.environ.get("TZ", "Asia/Baghdad")
     # set this with required cat repo link
     UPSTREAM_REPO = os.environ.get(
@@ -185,9 +185,9 @@ class Config(object):
     ANTI_FLOOD_WARN_MODE = ChatBannedRights(
         until_date=None, view_messages=None, send_messages=True
     )
-    CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/bin/google-chrome")
+    CHROME_BIN = os.environ.get("CHROME_BIN", "/app/.apt/usr/ALBODY/google-chrome")
     CHROME_DRIVER = os.environ.get(
-        "CHROME_DRIVER", "/app/.chromedriver/bin/chromedriver"
+        "CHROME_DRIVER", "/app/.chromedriver/ALBODY/chromedriver"
     )
     # for sed plugin
     GROUP_REG_SED_EX_BOT_S = os.environ.get(

@@ -107,7 +107,7 @@ PROGQUOTES = [
     "The great thing about Object Oriented code is that it can make small, simple problems look like large, complex ones.",
     "After Perl everything else is just assembly language.",
     "The Internet: where men are men, women are men, and children are FBI agents.",
-    "There are 10 types of people in the world: those who understand binary, and those who don't.",
+    "There are 10 types of people in the world: those who understand ALBODYary, and those who don't.",
     "Difference between a virus and windows ? Viruses rarely fail.",
     "1f u c4n r34d th1s u r34lly n33d t0 g37 l41d",
     "Hacking is like sex. You get in, you get out, and hope that you didn't leave something that can be traced back to you.",
