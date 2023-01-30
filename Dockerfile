@@ -1,8 +1,5 @@
 FROM bodythoniq/bodython:slim-buster
 
-#clonning repo 
-RUN git clone https://github.com/bodythoniq/bodython /root/bodython
-#working directory 
 WORKDIR /root/bodython
 RUN apk add --update --no-cache p7zip
 # Install requirements
