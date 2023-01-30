@@ -71,21 +71,3 @@ async def startup_process():
     await startupmessage()
     Catcheck.sucess = True
     return
-
-async def externalrepo():
-    if Config.VCMODE:
-        await install_externalrepo("https://github.com/bodythoniq/BodyVc", "bodyvc", "bodythonvc")
-
-bodyiq.loop.run_until_complete(externalrepo())
-bodyiq.loop.run_until_complete(startup_process())
-
-if len(sys.argv) not in (1, 3, 4):
-    bodyiq.disconnect()
-elif not Catcheck.sucess:
-    if HEROKU_APP is not None:
-        HEROKU_APP.restart()
-else:
-    try:
-        bodyiq.run_until_disconnected()
-    except ConnectionError:
-        pass
