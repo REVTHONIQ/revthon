@@ -18,7 +18,7 @@ from . import ALIVE_NAME
 
 plugin_category = "extra"
 
-#كـتابة وتعـديل  @lMl10l
+#كـتابة وتعـديل  @JF_61
 # bodyThon ™
 async def amongus_gen(text: str, clr: int) -> str:
     url = "https://github.com/bodyThon-AR/bodyiq-Resources/raw/master/Resources/Amongus/"

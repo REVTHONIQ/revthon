@@ -18,7 +18,7 @@ from . import mention
 
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @lMl10l
+#كتـابة وتعـديل:  @JF_61
 @bodyiq.on(admin_cmd(pattern=f"بنك(?:\s|$)([\s\S]*)"))
     
 async def amireallyalive(event):

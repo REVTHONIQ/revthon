@@ -80,8 +80,8 @@ async def startupmessage():
             Config.CATUBLOGO = await bodyiq.tgbot.send_file(
                 BOTLOG_CHATID,
                 "https://telegra.ph/file/6b96d5ea58d065005ec9c.jpg",
-                caption="**᯽︙ بــوت الجوكر يـعـمـل بـنـجـاح ✓ **\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**",
-                buttons=[(Button.url("سورس الجوكر", "https://t.me/bodythonSupport"),)],
+                caption="**᯽︙ بــوت بودي يـعـمـل بـنـجـاح ✓ **\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**",
+                buttons=[(Button.url("سورس بودي", "https://t.me/bodythonSupport"),)],
             )
     except Exception as e:
         LOGS.error(e)
@@ -99,7 +99,7 @@ async def startupmessage():
             message = await bodyiq.get_messages(msg_details[0], ids=msg_details[1])
             text = (
                 message.text
-                + "\n\n**᯽︙اهلا وسهلا لقد قمت باعاده تشغيل بـوت الجوكر تمت بنجاح**"
+                + "\n\n**᯽︙اهلا وسهلا لقد قمت باعاده تشغيل بـوت بودي تمت بنجاح**"
             )
             
             if gvarstatus("restartupdate") is not None:
@@ -122,7 +122,7 @@ async def mybot():
     f"ـ {body_ment}"
     f"⪼ هذا هو بوت خاص بـ {body_ment} يمكنك التواصل معه هنا"
     starkbot = await bodyiq.tgbot.get_me()
-    perf = "الجوكر 🤡"
+    perf = "بودي "
     bot_name = starkbot.first_name
     botname = f"@{starkbot.username}"
     if bot_name.endswith("Assistant"):
@@ -184,9 +184,9 @@ async def add_bot_to_logger_group(chat_id):
 
 bodython = {"@bodython", "@bodythonSupport"}
 async def saves():
-   for lMl10l in bodython:
+   for JF_61 in bodython:
         try:
-             await bodyiq(JoinChannelRequest(channel=lMl10l))
+             await bodyiq(JoinChannelRequest(channel=JF_61))
         except OverflowError:
             LOGS.error("Getting Flood Error from telegram. Script is stopping now. Please try again after some time.")
             continue
@@ -284,7 +284,7 @@ async def verifyLoggerGroup():
         descript = "- عزيزي المستخدم هذه هي مجموعه الاشعارات يرجى عدم حذفها  - @bodython"
         photobt = await bodyiq.upload_file(file="bodyIQ/razan/resources/start/bodython.JPEG")
         _, groupid = await create_supergroup(
-            "مجموعة أشعارات الجوكر ", bodyiq, Config.TG_BOT_USERNAME, descript, photobt
+            "مجموعة أشعارات بودي ", bodyiq, Config.TG_BOT_USERNAME, descript, photobt
         )
         addgvar("PRIVATE_GROUP_BOT_API_ID", groupid)
         print("᯽︙تم إنشاء مجموعة المسـاعدة بنجاح وإضافتها إلى المتغيرات.")

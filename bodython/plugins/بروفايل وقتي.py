@@ -1,5 +1,5 @@
 # اذا تخمط اذكر الحقوق رجـاءا  - 
-# كتابة وتعديل وترتيب  ~ @lMl10l
+# كتابة وتعديل وترتيب  ~ @JF_61
 # For ~ @bodython
 #تعديل Reda / رضا
 #من تعرف تخمط اذكر حقوق لتسوي نفسك مطور
@@ -104,8 +104,8 @@ async def autoname_loop():
                 namerzfont = gvarstatus("JP_FN") or "𝟣𝟤𝟥𝟦𝟧𝟨𝟩𝟪𝟫𝟢"
                 namefont = namerzfont[normzltext.index(normal)]
                 HM = HM.replace(normal, namefont)
-                lMl10l = gvarstatus("TIME_body") or ""
-        name = f"{lMl10l} {HM}"
+                JF_61 = gvarstatus("TIME_body") or ""
+        name = f"{JF_61} {HM}"
         LOGS.info(name)
         try:
             await bodyiq(functions.account.UpdateProfileRequest(last_name=name))

@@ -23,7 +23,7 @@ from . import mention
 
 plugin_category = "utils"
 
-#كتـابة وتعـديل:  @lMl10l
+#كتـابة وتعـديل:  @JF_61
 ALIVE_ET = Config.ALIVE_ET or "فحص"
 @bodyiq.on(admin_cmd(pattern=f"{ALIVE_ET}(?:\s|$)([\s\S]*)"))
     

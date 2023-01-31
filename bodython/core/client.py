@@ -37,7 +37,7 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 
-class JokerClient(TelegramClient):
+class bodyClient(TelegramClient):
     def ar_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
@@ -140,7 +140,7 @@ class JokerClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
+                        text = "**تقرير خطا بودي**\n\n"
                         link = "[هنا](https://t.me/bodythonSupport)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
@@ -255,7 +255,7 @@ class JokerClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
+                        text = "**تقرير خطا بودي**\n\n"
                         link = "[هنا](https://t.me/Groupbodython)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
@@ -292,14 +292,14 @@ class JokerClient(TelegramClient):
         self.running_processes.clear()
 
 
-JokerClient.fast_download_file = download_file
-JokerClient.fast_upload_file = upload_file
-JokerClient.reload = restart_script
-JokerClient.get_msg_link = get_message_link
-JokerClient.check_testcases = checking
+bodyClient.fast_download_file = download_file
+bodyClient.fast_upload_file = upload_file
+bodyClient.reload = restart_script
+bodyClient.get_msg_link = get_message_link
+bodyClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    JokerClient.send_message = send_message
-    JokerClient.send_file = send_file
-    JokerClient.edit_message = edit_message
+    bodyClient.send_message = send_message
+    bodyClient.send_file = send_file
+    bodyClient.edit_message = edit_message

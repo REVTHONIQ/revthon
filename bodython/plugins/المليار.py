@@ -1,4 +1,4 @@
-#by Hussein For bodython-Joker
+#by Hussein For bodython-body
 # يمنع منعاً باتاً تخمط الملف خلي عندك كرامه ولتسرقة
 from bodython import bodyiq
 from telethon.tl.functions.messages import GetHistoryRequest

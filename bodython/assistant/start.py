@@ -37,7 +37,7 @@ async def start(event):
             buttons=[
                                      [Button.inline("عرض المستخدمين 📬", data="users"), Button.inline(
                                          "اوامر البـوت ⚒️", data="gibcmd")],
-                                     [Button.url("المطـور 🔗", "https://t.me/lMl10l"), Button.inline(
+                                     [Button.url("المطـور 🔗", "https://t.me/JF_61"), Button.inline(
                                          "اوامر الزغـرفة", data="rozzag")],
 
                                  ])
@@ -52,7 +52,7 @@ async def start(event):
             link_preview=False,
             buttons=[
                 [custom.Button.inline("تنـصيب جيـبثون  🐍", data="deploy")],
-                [Button.url("تحتاج مسـاعدة ❓", "https://t.me/lMl10l")],
+                [Button.url("تحتاج مسـاعدة ❓", "https://t.me/JF_61")],
             ],
         )
 

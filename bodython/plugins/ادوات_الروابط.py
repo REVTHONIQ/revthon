@@ -1,5 +1,5 @@
 # Copyright (C) 2021 bodyThon TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @JF_61
 
 import requests
 from validators.url import url
@@ -52,7 +52,7 @@ async def _(event):
     info={
         "header": "To short the given url.",
         "usage": "{tr}short <url/reply to url>",
-        "examples": "{tr}short https://github.com/lMl10l1709/catuserbot",
+        "examples": "{tr}short https://github.com/JF_611709/catuserbot",
     },
 )
 async def _(event):

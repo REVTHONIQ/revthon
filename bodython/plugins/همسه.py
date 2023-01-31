@@ -3,7 +3,7 @@ import random, re
 from bodython.utils import admin_cmd
 import asyncio 
 
-# Wespr File by  @lMl10l
+# Wespr File by  @JF_61
 # Copyright (C) 2021 bodyThon TEAM
 @borg.on(
     admin_cmd(pattern="همسة ?(.*)")
@@ -27,14 +27,14 @@ async def _(event):
 @borg.on(admin_cmd("الهمسة"))
 async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
-        await event.edit("**᯽︙ شـرح كيـفية كـتابة همـسة سـرية**\n᯽︙ اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n᯽︙ مـثال  :   `.همسة ههلا @lMl10l`")
+        await event.edit("**᯽︙ شـرح كيـفية كـتابة همـسة سـرية**\n᯽︙ اولا اكتب الامر  .همسة  بعدها الرسالة بعدها اكتب معرف الشخص\n᯽︙ مـثال  :   `.همسة ههلا @JF_61`")
         
 @borg.on(
     admin_cmd(
        pattern="اكس او$"
     )
 )
-# كتابة وتعديل فريق الجوكر  #@lMl10l
+# كتابة وتعديل فريق بودي  #@JF_61
 async def gamez(event):
     if event.fwd_from:
         return

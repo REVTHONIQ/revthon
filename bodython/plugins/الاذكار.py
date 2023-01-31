@@ -11,7 +11,7 @@ from ..core.managers import edit_or_reply
 
 plugin_category = "extra" 
 
-#by ~ @lMl10l
+#by ~ @JF_61
 @bodyiq.ar_cmd(
     pattern="اذكار الصباح",
     command=("اذكار الصباح", plugin_category),)
@@ -19,7 +19,7 @@ async def _(event):
      if not event.text[0].isalpha() and event.text[0] not in ("/", "#", "@", "!"):
            roze = random.choice(razan)
            return await event.edit(f"{roze}")
-#by ~ @lMl10l
+#by ~ @JF_61
 @bodyiq.ar_cmd(
     pattern="اذكار المساء$",
     command=("اذكار المساء", plugin_category),)

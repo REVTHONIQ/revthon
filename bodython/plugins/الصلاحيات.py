@@ -18,7 +18,7 @@ from . import BOTLOG, get_user_from_event
 plugin_category = "admin" 
 
 # Copyright (C) 2021 bodyThon TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @JF_61
 
 @bodyiq.ar_cmd(
     pattern="قفل (.*)",
@@ -311,7 +311,7 @@ async def _(event):  # sourcery no-metrics
                     event, "᯽︙ ارسال الانلاين مسموح في هذه الدردشه ⌁"
                 )
             ainline = False
-            locktype = "الانلاين"  # BY  @lMl10l  -  @UUNZZ
+            locktype = "الانلاين"  # BY  @JF_61  -  @UUNZZ
         elif input_str == "التصويت":  
             if not gpoll:
                 return await edit_delete(
@@ -395,7 +395,7 @@ async def _(event):  # sourcery no-metrics
                 time=5,
             )
 
-# BY  @lMl10l
+# BY  @JF_61
 @bodyiq.ar_cmd(
     pattern="الصلاحيات$",
     command=("الصلاحيات", plugin_category),
@@ -412,7 +412,7 @@ async def _(event):  # sourcery no-metrics
     if not current_db_locks:
         res = "لا توجد معلومات كافيه في هذه الدردشه"
     else:
-        res = "᯽︙ ملـف الاوامر مقدم من سورس الجوكر: \n"
+        res = "᯽︙ ملـف الاوامر مقدم من سورس بودي: \n"
         ubots = "✗" if current_db_locks.bots else "✔"
         ucommands = "✗" if current_db_locks.commands else "✔"
         uemail = "✗" if current_db_locks.email else "✔"
@@ -1139,4 +1139,4 @@ async def _(event):
                     users_added_by
                 )
             )
-#THIS FILE WRITTEN BY  @lMl10l
+#THIS FILE WRITTEN BY  @JF_61

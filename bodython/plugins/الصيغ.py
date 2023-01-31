@@ -28,7 +28,7 @@ PATH = os.path.join("./temp", "temp_vid.mp4")
 thumb_loc = os.path.join(Config.TMP_DOWNLOAD_DIRECTORY, "thumb_image.jpg")
 
 #Copyright  By  @bodyThon  © 2021
-#WRITE BY  @lMl10l  
+#WRITE BY  @JF_61  
 #Edited By Reda 
 @bodyiq.ar_cmd(
     pattern="تحويل صورة$",
@@ -198,7 +198,7 @@ async def _(event):
             await event.delete()
             
 #Copyright  By  @bodyThon  © 2021
-#WRITE BY  @lMl10l
+#WRITE BY  @JF_61
 
 @bodyiq.ar_cmd(
     pattern="تحويل متحركة ?([0-9.]+)?$",

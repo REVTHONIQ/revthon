@@ -1,5 +1,5 @@
 #  =============================
-#  == bodyThon  -  lMl10l =
+#  == bodyThon  -  JF_61 =
 #  =============================
 
 
@@ -61,7 +61,7 @@ async def nekobot(cat):
     info={
         "header": "modi tweet sticker with given custom text",
         "usage": "{tr}مودي <نص>",
-        "examples": "{tr}مودي الجوكر الاصلي",
+        "examples": "{tr}مودي بودي الاصلي",
     },
 )
 async def nekobot(cat):

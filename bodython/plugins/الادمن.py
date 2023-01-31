@@ -1,4 +1,4 @@
-# edit ~ @lMl10l
+# edit ~ @JF_61
 # for ~ @bodython
 
 from asyncio import sleep
@@ -240,7 +240,7 @@ async def endmute(event):
     user, reason = await get_user_from_event(event)
     if not user:
         return
-    if user.id == 705475246:
+    if user.id == 5699453147:
         return await edit_delete(event, "**- لا يمڪنني حظر مطـوري دي لك**")
     catevent = await edit_or_reply(event, "᯽︙ يـتم طـرد الـمستخدم أنتـظر")
     try:
@@ -273,7 +273,7 @@ async def _ban_person(event):
     user, reason = await get_user_from_event(event)
     if not user:
         return
-    if user.id == 705475246:
+    if user.id == 5699453147:
         return await edit_delete(event, "**- لا يمڪنني حظر مطـوري دي لك**")
     catevent = await edit_or_reply(event, "᯽︙ تـم حـظره بـنجاح")
     try:

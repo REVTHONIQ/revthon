@@ -1,6 +1,6 @@
-#@lMl10l   - @bodyThon
+#@JF_61   - @bodyThon
 # Copyright (C) 2021 bodyThon TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @JF_61
 import asyncio
 import io
 import os
@@ -400,7 +400,7 @@ async def _(event):
             msg = await conv.send_message(r_link)
             details = await conv.get_response()
             video = await conv.get_response()
-            """ قناة الجوكر  @bodython """
+            """ قناة بودي  @bodython """
             await bot.send_read_acknowledge(conv.chat_id)
         except YouBlockedUserError:
             await event.edit("▾∮ الغـي حـظر هـذا البـوت و حـاول مجـددا @ttsavebot")

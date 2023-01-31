@@ -1,11 +1,11 @@
-#edit  ~ @lMl10l for bodyiq 
+#edit  ~ @JF_61 for bodyiq 
 
 from telethon import events
 from bodython.utils import admin_cmd
 from bodython import bodyiq
 from . import *
  
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 plugin_category = "extra"
 @bodyiq.ar_cmd(
@@ -15,15 +15,15 @@ plugin_category = "extra"
 async def tmgif(event):
     if event.fwd_from:
         return
-    lMl10l = await reply_id(event)
+    JF_61 = await reply_id(event)
     if sad:
         bodyiq = f"**˛ body ، ٰ𝖦𝗂𝖿 𝖲ِ𝖺ٰ𝖣 . .**\n"
         bodyiq += f"✛━━━━━━━━━━━━━✛\n"
         bodyiq += f"**الـمتحـرڪـة الأولـى **"
-        await event.client.send_file(event.chat_id, sad, caption=bodyiq, reply_to=lMl10l)
+        await event.client.send_file(event.chat_id, sad, caption=bodyiq, reply_to=JF_61)
 
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 @bodyiq.ar_cmd(
     pattern="س2$",
@@ -39,8 +39,8 @@ async def tmgif(event):
         RAZAN += f"**الـمتحـرڪـة الـثـانيـة **"
         await event.client.send_file(event.chat_id, sad2, caption=RAZAN, reply_to=leo)
 
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 @bodyiq.ar_cmd(
     pattern="س3$",
@@ -56,8 +56,8 @@ async def tmgif(event):
         RAZAN += f"**الـمتحـرڪـة الـثـالثـة**\n"
         await event.client.send_file(event.chat_id, sad3, caption=RAZAN, reply_to=sic_id)
 
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 @bodyiq.ar_cmd(
     pattern="س4$",
@@ -75,8 +75,8 @@ async def tmgif(event):
             event.chat_id, sad4, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 @bodyiq.ar_cmd(
     pattern="س5$",
@@ -95,8 +95,8 @@ async def tmgif(event):
             event.chat_id, sad5, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 @bodyiq.ar_cmd(
     pattern="س6$",
@@ -115,8 +115,8 @@ async def tmgif(event):
             event.chat_id, sad6, caption=RAZAN, reply_to=reply_to_id
         )
 
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك
 
 @bodyiq.ar_cmd(
     pattern="س7$",
@@ -166,5 +166,5 @@ async def tmgif(event):
         await event.client.send_file(
             event.chat_id, sad9, caption=RAZAN, reply_to=reply_to_id
         )
-#edit  ~ @lMl10l for bodyiq 
-#جميع الحقوق محفوظة لسـورس الجوكر تخـمط تبيـن فشلـك
+#edit  ~ @JF_61 for bodyiq 
+#جميع الحقوق محفوظة لسـورس بودي تخـمط تبيـن فشلـك

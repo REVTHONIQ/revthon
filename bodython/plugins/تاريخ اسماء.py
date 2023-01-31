@@ -1,5 +1,5 @@
 # Copyright (C) 2021 bodyThon TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @JF_61
 import asyncio
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -28,12 +28,12 @@ plugin_category = "utils"
         "examples": "{tr}sg @missrose_bot",
     },
 )
-async def _(event):  #   : @lMl10l
+async def _(event):  #   : @JF_61
     "To get name/username history."
     input_str = "".join(event.text.split(maxsplit=1)[1:])
     reply_message = await event.get_reply_message()
     if not input_str and not reply_message:
-        await edit_delete( #ترجمه فريق الجوكر على التيلكرام
+        await edit_delete( #ترجمه فريق بودي على التيلكرام
             event,
             "᯽︙  يـجب الـرد على الشخـص او كتـابة معـرفه مع الأمـر لأظـهار تواريـخ اسمـه",
         )
@@ -67,6 +67,6 @@ async def _(event):  #   : @lMl10l
     for i in check:
         if jasem:
             await event.reply(i, parse_mode=_format.parse_pre)
-        else:#ترجمه فريق الجوكر على التيلكرام
+        else:#ترجمه فريق بودي على التيلكرام
             jasem = True
             await catevent.edit(i, parse_mode=_format.parse_pre)

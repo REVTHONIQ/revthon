@@ -6,8 +6,8 @@ from ..sql_helper.globals import gvarstatus
 async def dato(event):
     if not event.is_reply:
         return await event.edit("..")
-    lMl10l = await event.get_reply_message()
-    pic = await lMl10l.download_media()
+    JF_61 = await event.get_reply_message()
+    pic = await JF_61.download_media()
     await bot.send_file(
         "me",
         pic,
@@ -15,7 +15,7 @@ async def dato(event):
 - تـم حفظ الصـورة بنجـاح ✓ 
 - غير مبري الذمه اذا استخدمت الامر للابتزاز
 - CH: @bodython
-- Dev: @lMl10l
+- Dev: @JF_61
   """,
     )
     await event.delete()

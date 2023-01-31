@@ -1,5 +1,5 @@
 # Copyright (C) 2021 bodyThon TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @JF_61
 from covid import Covid
 
 from . import bodyiq, covidindia, edit_delete, edit_or_reply

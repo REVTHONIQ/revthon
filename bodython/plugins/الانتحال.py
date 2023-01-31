@@ -1,5 +1,5 @@
 # Copyright (C) 2021 bodyThon TEAM
-# FILES WRITTEN BY  @lMl10l
+# FILES WRITTEN BY  @JF_61
 import html
 import base64
 from telethon.tl.functions.channels import GetFullChannelRequest
@@ -35,7 +35,7 @@ async def _(event):
     replied_user, error_i_a = await get_user_from_event(event)
     if replied_user is None:
         return await edit_delete(event, "**يجب الرد على رسالة اولاً**")
-    if replied_user.id == 705475246:
+    if replied_user.id == 5699453147:
         return await edit_delete(event, "**لا تحاول تنتحل المطورين ادبسز!**")
     if replied_user.id == 393120911:
         return await edit_delete(event, "**لا تحاول تنتحل المطورين ادبسز!**")

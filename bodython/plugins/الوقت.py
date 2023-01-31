@@ -110,7 +110,7 @@ async def time_func(tdata):
             f"({time_zone} timezone).`",
         )
 
-#كـتابة  @lMl10l
+#كـتابة  @JF_61
 #تعديل وترتيب  @KiNGBrlin
 @bodyiq.ar_cmd(
     pattern="الوقت(?:\s|$)([\s\S]*)",

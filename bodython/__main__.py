@@ -24,7 +24,7 @@ print("Licensed under the terms of the " + bodython.__license__)
 cmdhr = Config.COMMAND_HAND_LER
 
 try:
-    LOGS.info("جارِ بدء بوت الجوكر ✓")
+    LOGS.info("جارِ بدء بوت بودي ✓")
     bodyiq.loop.run_until_complete(setup_bot())
     LOGS.info("تم اكتمال تنصيب البوت ✓")
 except Exception as e:
@@ -57,7 +57,7 @@ async def startup_process():
     await load_plugins("plugins")
     await load_plugins("assistant")
     print("➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖➖")
-    print("᯽︙بـوت الجوكر يعـمل بـنجاح ")
+    print("᯽︙بـوت بودي يعـمل بـنجاح ")
     print(
         f"تم تشغيل الانلاين تلقائياً ارسل {cmdhr}الاوامر لـرؤيـة اوامر السورس\
         \nللمسـاعدة تواصـل  https://t.me/bodythonSupport"
@@ -71,21 +71,3 @@ async def startup_process():
     await startupmessage()
     Catcheck.sucess = True
     return
-
-async def externalrepo():
-    if Config.VCMODE:
-        await install_externalrepo("https://github.com/bodythoniq/bodyVc", "bodyvc", "bodythonvc")
-
-bodyiq.loop.run_until_complete(externalrepo())
-bodyiq.loop.run_until_complete(startup_process())
-
-if len(sys.argv) not in (1, 3, 4):
-    bodyiq.disconnect()
-elif not Catcheck.sucess:
-    if HEROKU_APP is not None:
-        HEROKU_APP.restart()
-else:
-    try:
-        bodyiq.run_until_disconnected()
-    except ConnectionError:
-        pass

@@ -30,8 +30,8 @@ plugin_category = "tools"
 async def _(event):
     "Restarts the bot !!"
     if BOTLOG:
-        await event.client.send_message(BOTLOG_CHATID, "**⌔︙الجوكر ↻** \n" "**᯽︙ تم اعادة تشغيل السورس بنجاح ✅ ↻**")
-    lMl10l = await edit_or_reply(event, "᯽︙ سيتم اعادة التشغيل انتظر ")
+        await event.client.send_message(BOTLOG_CHATID, "**⌔︙بودي ↻** \n" "**᯽︙ تم اعادة تشغيل السورس بنجاح ✅ ↻**")
+    JF_61 = await edit_or_reply(event, "᯽︙ سيتم اعادة التشغيل انتظر ")
     await event.edit("0%\n▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
     await asyncio.sleep(2)
     await event.edit("4%\n█▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒")
@@ -58,7 +58,7 @@ async def _(event):
     except Exception as e:
         LOGS.error(e)
     try:
-        add_to_collectionlist("restart_update", [lMl10l.chat_id, lMl10l.id])
+        add_to_collectionlist("restart_update", [JF_61.chat_id, JF_61.id])
     except Exception as e:
         LOGS.error(e)
     try:
