@@ -79,7 +79,7 @@ async def startupmessage():
         if BOTLOG:
             Config.CATUBLOGO = await reviq.tgbot.send_file(
                 BOTLOG_CHATID,
-                "https://telegra.ph/file/6b96d5ea58d065005ec9c.jpg",
+                "https://telegra.ph/file/bfa2fb6fd0e9551159965.png",
                 caption="**᯽︙ بــوت ريف يـعـمـل بـنـجـاح ✓ **\n**᯽︙ ارسل `.الاوامر` لرؤية اوامر السورس**",
                 buttons=[(Button.url("سورس ريف", "https://t.me/RevthonSupport"),)],
             )
