@@ -9,7 +9,7 @@ from revthon import reviq
 from ..core import check_owner
 from ..Config import Config
 
-REV_IC = "https://telegra.ph/file/762989c65df81fc2e96d7.jpg"
+REV_IC = "https://telegra.ph/file/bfa2fb6fd0e9551159965.png"
 ROE = "**♰ هـذه هي قائمة اوامـر سـورس ريف ♰**"
 
 if Config.TG_BOT_USERNAME is not None and tgbot is not None:
