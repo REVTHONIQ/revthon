@@ -7,7 +7,7 @@ from ..Config import Config
 from .client import ReevClient
 LOGS = logging.getLogger(" ")
 
-__version__ = "2.10.6"
+__version__ = "1.0"
 
 loop = None
 
