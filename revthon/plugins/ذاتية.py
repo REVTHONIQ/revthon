@@ -2,7 +2,7 @@ from revthon import *
 from revthon import reviq
 from ..sql_helper.globals import gvarstatus
 
-@reviq.on(admin_cmd(pattern="(جلب الصورة|جلب الصوره|ذاتيه|ذاتية|حفظ)"))
+@reviq.on(pattern="(جلب الصورة|جلب الصوره|ذاتيه|ذاتية|حفظ)")
 async def dato(event):
     if not event.is_reply:
         return await event.edit("..")
