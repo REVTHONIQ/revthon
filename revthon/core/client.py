@@ -5,6 +5,7 @@ import sys
 import traceback
 from pathlib import Path
 from typing import Dict, List, Union
+import heroku3
 
 from telethon import TelegramClient, events
 from telethon.errors import MessageIdInvalidError, MessageNotModifiedError
@@ -26,6 +27,12 @@ from .pluginManager import get_message_link, restart_script
 LOGS = logging.getLogger(__name__)
 
 
+HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
+HEROKU_API_KEY = Config.HEROKU_API_KEY or None
+Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
+heroku_api = "https://api.heroku.com"
+
+UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
 class REGEX:
     def __init__(self):
         self.regex = ""
@@ -140,7 +147,7 @@ class ReevClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا ريف**\n\n"
+                        text = "**تقرير خطا ريف**\n\n"+[{UPSTREAM_REPO_BRANCH}]
                         link = "[هنا](https://t.me/RevthonSupport)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
