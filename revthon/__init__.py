@@ -22,7 +22,7 @@ REVVERSION = "3.1.3"
 
 
 if Config.UPSTREAM_REPO == "revthoniq":
-    UPSTREAM_REPO_URL = "https://github.com/revthoniq/revthon"
+    UPSTREAM_REPO_URL = "https://github.com/revthoniq/revthon.git"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
