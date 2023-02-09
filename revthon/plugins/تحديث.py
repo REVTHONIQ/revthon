@@ -176,7 +176,7 @@ async def upstream(event):
         repo.create_remote("upstream", off_repo)
     except BaseException:
         pass
-    ups_rem = repo.remote("upstream")
+    ups_rem = repo.remote("upstream", off_repo)
     ups_rem.fetch(ac_br)
     changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
     # Special case for deploy
