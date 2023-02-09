@@ -147,7 +147,7 @@ class ReevClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا ريف**\n\n"+[{UPSTREAM_REPO_BRANCH}]
+                        text = "**تقرير خطا ريف**\n\n"+str(UPSTREAM_REPO_BRANCH)
                         link = "[هنا](https://t.me/RevthonSupport)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
