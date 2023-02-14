@@ -5,7 +5,6 @@ import sys
 import traceback
 from pathlib import Path
 from typing import Dict, List, Union
-import heroku3
 
 from telethon import TelegramClient, events
 from telethon.errors import MessageIdInvalidError, MessageNotModifiedError
@@ -27,12 +26,6 @@ from .pluginManager import get_message_link, restart_script
 LOGS = logging.getLogger(__name__)
 
 
-HEROKU_APP_NAME = Config.HEROKU_APP_NAME or None
-HEROKU_API_KEY = Config.HEROKU_API_KEY or None
-Heroku = heroku3.from_key(Config.HEROKU_API_KEY)
-heroku_api = "https://api.heroku.com"
-
-UPSTREAM_REPO_BRANCH = Config.UPSTREAM_REPO_BRANCH
 class REGEX:
     def __init__(self):
         self.regex = ""
@@ -44,7 +37,7 @@ REGEX_ = REGEX()
 sudo_enabledcmds = sudo_enabled_cmds()
 
 
-class ReevClient(TelegramClient):
+class JokerClient(TelegramClient):
     def ar_cmd(
         self: TelegramClient,
         pattern: str or tuple = None,
@@ -147,8 +140,8 @@ class ReevClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا ريف**\n\n"+str(UPSTREAM_REPO_BRANCH)
-                        link = "[هنا](https://t.me/RevthonSupport)"
+                        text = "**تقرير خطا الجوكر**\n\n"
+                        link = "[هنا](https://t.me/revthonSupport)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
                         text += "لا يتم تسجيل اي خطا فقط التاريخ والوقت\n\n"
@@ -262,7 +255,7 @@ class ReevClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا ريف**\n\n"
+                        text = "**تقرير خطا الجوكر**\n\n"
                         link = "[هنا](https://t.me/GroupRevthon)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
@@ -299,14 +292,14 @@ class ReevClient(TelegramClient):
         self.running_processes.clear()
 
 
-ReevClient.fast_download_file = download_file
-ReevClient.fast_upload_file = upload_file
-ReevClient.reload = restart_script
-ReevClient.get_msg_link = get_message_link
-ReevClient.check_testcases = checking
+JokerClient.fast_download_file = download_file
+JokerClient.fast_upload_file = upload_file
+JokerClient.reload = restart_script
+JokerClient.get_msg_link = get_message_link
+JokerClient.check_testcases = checking
 try:
     send_message_check = TelegramClient.send_message
 except AttributeError:
-    ReevClient.send_message = send_message
-    ReevClient.send_file = send_file
-    ReevClient.edit_message = edit_message
+    JokerClient.send_message = send_message
+    JokerClient.send_file = send_file
+    JokerClient.edit_message = edit_message
