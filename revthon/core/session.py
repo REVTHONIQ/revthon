@@ -32,7 +32,7 @@ except Exception as e:
     sys.exit()
 
 try:
-    reviq.tgbot = tgbot = ReevClient(
+    reviq.tgbot = tgbot = RevClient(
         session="arTgbot",
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
