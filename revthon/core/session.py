@@ -4,7 +4,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
 from ..Config import Config
-from .client import ReevClient
+from .client import RevClient
 LOGS = logging.getLogger(" ")
 
 __version__ = "1.0"
