@@ -21,8 +21,8 @@ StartTime = time.time()
 REVVERSION = "3.1.3"
 
 
-if Config.UPSTREAM_REPO == "revthoniq":
-    UPSTREAM_REPO_URL = "https://github.com/revthoniq/revthon.git"
+if Config.UPSTREAM_REPO == "REVTHONIQ":
+    UPSTREAM_REPO_URL = "https://github.com/REVTHONIQ/revthon"
 else:
     UPSTREAM_REPO_URL = Config.UPSTREAM_REPO
 
