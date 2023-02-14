@@ -4,7 +4,7 @@ from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sessions import StringSession
 from telethon.errors import AccessTokenExpiredError, AccessTokenInvalidError
 from ..Config import Config
-from .client import RevClient
+from .client import ReevClient
 LOGS = logging.getLogger(" ")
 
 __version__ = "1.0"
@@ -32,7 +32,7 @@ except Exception as e:
     sys.exit()
 
 try:
-    reviq.tgbot = tgbot = RevClient(
+    reviq.tgbot = tgbot = ReevClient(
         session="arTgbot",
         api_id=Config.APP_ID,
         api_hash=Config.API_HASH,
