@@ -140,7 +140,7 @@ class ReevClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
+                        text = "**تقرير خطا ريف**\n\n"
                         link = "[هنا](https://t.me/revthonSupport)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
@@ -255,7 +255,7 @@ class ReevClient(TelegramClient):
                         pastelink = await paste_message(
                             ftext, pastetype="s", markdown=False
                         )
-                        text = "**تقرير خطا الجوكر**\n\n"
+                        text = "**تقرير خطا ريف**\n\n"
                         link = "[هنا](https://t.me/GroupRevthon)"
                         text += "إذا كنت تريد يمكنك الإبلاغ عن ذلك"
                         text += f"- فقط قم بإعادة توجيه هذه الرسالة {link}.\n"
