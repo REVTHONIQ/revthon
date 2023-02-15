@@ -29,7 +29,7 @@ class Config(object):
     TZ = os.environ.get("TZ", "Asia/Baghdad")
     # set this with required cat repo link
     UPSTREAM_REPO = os.environ.get(
-        "UPSTREAM_REPO", "https://github.com/revthoniq/revthon.git"
+        "UPSTREAM_REPO", "https://github.com/revthoniq/revthon"
     )
 
     # BASIC and MAIN CONFIG VARS
@@ -100,6 +100,10 @@ class Config(object):
     THUMB_IMAGE = os.environ.get(
         "THUMB_IMAGE", "https://telegra.ph/file/ca95524e4734b0d5461b5.jpg"
     )
+    # هيروكو ايبي كي تجيبه من هنا https://dashboard.heroku.com/account
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+    # هنا اسم التطبيق الخاص بك
+    HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     # specify NO_LOAD with plugin names for not loading in revthon
     NO_LOAD = [x for x in os.environ.get("NO_LOAD", "").split()]
     # for custom pic for .digitalpfp
