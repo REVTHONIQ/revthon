@@ -1,6 +1,7 @@
 from revthon import *
 from revthon import reviq
 from telethon import events
+import asyncio
 
 smedia = False
 
