@@ -108,7 +108,7 @@ async def update_bot(event, repo, ups_rem, ac_br):
     await event.client.reload(revthon)
 
 
-async def deploy(event):
+async def deploy(event, repo, ups_rem, ac_br, txt):
     if HEROKU_API_KEY is None:
         return await event.edit("**• يرجى وضع فار HEROKU_API_KEY للتحديث**")
     heroku = heroku3.from_key(HEROKU_API_KEY)
@@ -117,29 +117,173 @@ async def deploy(event):
         await event.edit(
             "**• يرجى وضع فار HEROKU_APP_NAME**" " لتتمكن من تحديث السورس "
         )
+        repo.__del__()
+        return
     heroku_app = next(
         (app for app in heroku_applications if app.name == HEROKU_APP_NAME),
         None,
     )
+
     if heroku_app is None:
-            await event.edit(f"**• خطأ في التعرف على تطبيق هيروكو**")
-            await event.edit(
+        await event.edit(f"{txt}\n" "**• خطأ في التعرف على تطبيق هيروكو**")
+        return repo.__del__()
+    revthon = await event.edit(
         "**• جار اعادة تشغيل الدينو الان يرجى الانتظار من 2-5 دقائق**"
+    )
+    try:
+        ulist = get_collectionlist_items()
+        for i in ulist:
+            if i == "restart_update":
+                del_keyword_collectionlist("restart_update")
+    except Exception as e:
+        LOGS.error(e)
+    try:
+        add_to_collectionlist("restart_update", [revthon.chat_id, revthon.id])
+    except Exception as e:
+        LOGS.error(e)
+    ups_rem.fetch(ac_br)
+    repo.git.reset("--hard", "FETCH_HEAD")
+    heroku_git_url = heroku_app.git_url.replace(
+        "https://", f"https://api:{HEROKU_API_KEY}@"
+    )
+
+    if "heroku" in repo.remotes:
+        remote = repo.remote("heroku")
+        remote.set_url(heroku_git_url)
+    else:
+        remote = repo.create_remote("heroku", heroku_git_url)
+    try:
+        remote.push(refspec="HEAD:refs/heads/master", force=True)
+    except Exception as error:
+        await event.edit(f"{txt}\n**تقرير الخطأ:**\n`{error}`")
+        return repo.__del__()
+    build_status = heroku_app.builds(order_by="created_at", sort="desc")[0]
+    if build_status.status == "failed":
+        return await edit_delete(
+            event, "**• فشل التحديث**\n" "يبدو أنه تم الغاءه او حصل خطأ ما"
         )
-    if HEROKU_APP is not None:
-        HEROKU_APP.restart()
+    try:
+        remote.push("master:main", force=True)
+    except Exception as error:
+        await event.edit(f"{txt}\n**تقرير الخطأ:**\n`{error}`")
+        return repo.__del__()
+    await event.edit("**• فشل التحديث ارسل** `.اعادة تشغيل` **للتحديث**")
+    with contextlib.suppress(CancelledError):
+        await event.client.disconnect()
+        if HEROKU_APP is not None:
+            HEROKU_APP.restart()
 
 
 @reviq.ar_cmd(pattern="تحديث(| الان)?$")
 async def upstream(event):
-    await event.edit("**• جار الان التحديث أنتظر قليلا**")
-    await deploy(event)
+    conf = event.pattern_match.group(1).strip()
+    event = await edit_or_reply(
+        event, "**• جار البحث عن التحديثات يرجى الانتظار قليلا**"
+    )
+    off_repo = UPSTREAM_REPO_URL
+    force_update = False
+    if ENV and (HEROKU_API_KEY is None or HEROKU_APP_NAME is None):
+        return await edit_or_reply(
+            event, "**• عليك وضع فارات هيروكو المطلوبة للتحديث**"
+        )
+    try:
+        txt = "فشل في التحديث لسورس ريف " + "**• حدث خطأ ما :**\n"
 
+        repo = Repo()
+    except NoSuchPathError as error:
+        await event.edit(f"{txt}\nالمجلد {error} لم يتم أيجاده")
+        return repo.__del__()
+    except GitCommandError as error:
+        await event.edit(f"{txt}\nفشل مبكر {error}")
+        return repo.__del__()
+    except InvalidGitRepositoryError as error:
+        if conf is None:
+            return await event.edit(
+                f"**• للأسف المجلد {error} لا يبدة انه خاص لسورس معين.\nيمكنك اصلاح هذه المشكلة بأرسال. `.تحديث التنصيب`"
+            )
+
+        repo = Repo.init()
+        origin = repo.create_remote("upstream", off_repo)
+        origin.fetch()
+        force_update = True
+        repo.create_head("master", origin.refs.master)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.heads.master.checkout(True)
+    ac_br = repo.active_branch.name
+    if ac_br != UPSTREAM_REPO_BRANCH:
+        await event.edit(
+            "**[التحديث]:**\n"
+            f"يبدو أنك تستخدم فرع أخر: ({ac_br}). "
+            "في هذه الحالة غير قادر على التحديث "
+            "لملفات الفرع الخاص بك. "
+            "يرجى استخدام الفرغ الاساسي"
+        )
+        return repo.__del__()
+    with contextlib.suppress(BaseException):
+        repo.create_remote("upstream", off_repo)
+    ups_rem = repo.remote("upstream")
+    ups_rem.fetch(ac_br)
+    changelog = await gen_chlog(repo, f"HEAD..upstream/{ac_br}")
+    # Special case for deploy
+    if changelog == "" and not force_update:
+        await event.edit(
+            "\n**• سورس ريف محدث الى أخر اصدار**"
+            f"**\n الفـرع: {UPSTREAM_REPO_BRANCH}**\n"
+        )
+        return repo.__del__()
+    if conf == "" and not force_update:
+        await print_changelogs(event, ac_br, changelog)
+        await event.delete()
+        return await event.respond(
+            f"**• ارسل** `{cmdhd}تحديث التنصيب` لتحديث سورس ريف"
+        )
+
+    if force_update:
+        await event.edit("**• جار التحديث الاجباري الى اخر اصدار انتظر قليلا**")
+    if conf == "الان":
+        await event.edit("**• جار تحديث سورس ريف أنتظر قليلا**")
+        await update_bot(event, repo, ups_rem, ac_br)
+    return
 
 
 @reviq.ar_cmd(
     pattern="تحديث التنصيب$",
 )
 async def upstream(event):
+    if ENV:
+        if HEROKU_API_KEY is None or HEROKU_APP_NAME is None:
+            return await edit_or_reply(
+                event, "**• يجب عليك وضع فارات هيروكو المطلوبة للتحديث**"
+            )
+    elif os.path.exists("config.py"):
+        return await edit_delete(
+            event,
+            f"**• انت تستخدم التنصيب يدويا يرجى ارسال امر** `{cmdhd}تحديث الان`",
+        )
+    event = await edit_or_reply(event, "**- جار جلب ملفات السورس يرجى الانتظار قليلا**")
+    off_repo = "https://github.com/REVTHONIQ/revthon"
+    os.chdir("/app")
+    try:
+        txt = "**• لقد حدث خطأ اثناء التحديث**" + "**لقد حدث خطأ ما**\n"
+
+        repo = Repo()
+    except NoSuchPathError as error:
+        await event.edit(f"{txt}\n•المجلد  {error} لم يتم ايجاده")
+        return repo.__del__()
+    except GitCommandError as error:
+        await event.edit(f"{txt}\n• فشل مبكر الخطا: {error}")
+        return repo.__del__()
+    except InvalidGitRepositoryError:
+        repo = Repo.init()
+        origin = repo.create_remote("upstream", off_repo)
+        origin.fetch()
+        repo.create_head("master", origin.refs.master)
+        repo.heads.master.set_tracking_branch(origin.refs.master)
+        repo.heads.master.checkout(True)
+    with contextlib.suppress(BaseException):
+        repo.create_remote("upstream", off_repo)
+    ac_br = repo.active_branch.name
+    ups_rem = repo.remote("upstream")
+    ups_rem.fetch(ac_br)
     await event.edit("**• جار الان التحديث أنتظر قليلا**")
-    await deploy(event)
+    await deploy(event, repo, ups_rem, ac_br, txt)
