@@ -6,13 +6,13 @@ import asyncio
 smedia = False
 
 
-@reviq.on(admin_cmd(pattern="تفعيل الذاتية."))
+@reviq.on(admin_cmd(pattern="تفعيل الذاتية"))
 async def start_datea(event):
     global smedia
     smedia = True
     await event.edit("- تم بنجاح تفعيل حفظ الميديا الذاتية من الان")
 
-@reviq.on(admin_cmd(pattern="تعطيل الذاتية."))
+@reviq.on(admin_cmd(pattern="تعطيل الذاتية"))
 async def stop_datea(event):
     global smedia
     smedia = False
