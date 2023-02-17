@@ -12,10 +12,10 @@ c = requests.session()
 revthon = ['yes']
 
 
-@reviq.on(admin_cmd(pattern="تجميع نقاط ?(.*)$"))
+@reviq.on(admin_cmd(pattern="تجميع (.*)"))
 async def _(event):
-    tt = event.text
-    bot_username = tt[5:]
+
+    bot_username = ("".join(event.text.split(maxsplit=1)[1:])).split(" ", 1)[0]
     if revthon[0] == "yes":
         await event.edit("**᯽︙سيتم تجميع النقاط , قبل كل شي تأكد من انك قمت بلانظمام الى القنوات الاشتراك الاجباري للبوت لعدم حدوث اخطاء**")
         channel_entity = await reviq.get_entity(bot_username)
