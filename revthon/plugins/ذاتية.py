@@ -3,6 +3,10 @@ from revthon import reviq
 from telethon import events
 import asyncio
 
+
+#فكرة سورس جمثون
+
+
 smedia = False
 
 
