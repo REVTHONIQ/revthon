@@ -27,8 +27,6 @@ async def handler(event):
         user_id = sender.id
 
         result = await event.download_media()
-        caption = (
-            f"ميديا ذاتية التدمير وصلت لك !\n: المرسل @{username}\nالايدي : {user_id}"
-        )
-        await event.send_file("me", result, caption=caption)
+        caption = (f"ميديا ذاتية التدمير وصلت لك !\n: المرسل @{username}\nالايدي : {user_id}")
+        await reviq.send_file("me", result, caption=caption)
     pass  
