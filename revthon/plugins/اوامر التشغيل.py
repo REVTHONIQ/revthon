@@ -48,7 +48,7 @@ async def _(event):
     await asyncio.sleep(2)
     await event.edit("100%\n████████████████████████")
     await asyncio.sleep(2)
-    await event.edit("**᯽︙ تم اعادة تشغيل بنجاح ✓ \nانتظر 2-5 دقائق**")
+    await event.edit("**❃ جارِ اعادة تشغيل السورس\nارسل** `.فحص` **او** `.الاوامر` **للتحقق مما إذ كان البوت شغال ، يستغرق الأمر في الواقع 1-3 دقيقة لإعادة التشغيل**")
     await asyncio.sleep(2)
     try:
         ulist = get_collectionlist_items()
