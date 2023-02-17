@@ -12,7 +12,7 @@ c = requests.session()
 revthon = ['yes']
 
 
-@reviq.on(admin_cmd(pattern="(تجميع النقاط|تجميع نقاط) ?(.*)$"))
+@reviq.on(admin_cmd(pattern="تجميع نقاط ?(.*)$"))
 async def _(event):
     tt = event.text
     bot_username = tt[5:]
